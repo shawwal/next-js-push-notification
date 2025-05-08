@@ -16,11 +16,13 @@ A flexible notification system for Next.js applications with fallback support fo
 
 ## Demo
 
-Check out the [link live deo](https://next-push-notification.shawwals.com/) or [alternate link live demo](https://next-js-push-notification-sigma.vercel.app/) to see the notification system in action.
+Check out the [link live demo](https://next-push-notification.shawwals.com/) or [alternate link live demo](https://next-js-push-notification-sigma.vercel.app/) to see the notification system in action.
 
 ## Installation
 
-\`\`\`bash
+To get started with the notification system, follow these steps:
+
+```bash
 # Clone the repository
 git clone https://github.com/shawwal/next-js-push-notification.git
 
@@ -32,13 +34,15 @@ npm install
 
 # Start the development server
 npm run dev
-\`\`\`
+```
 
 ## Usage
 
 ### Basic Implementation
 
-\`\`\`tsx
+Here's a basic example of how to integrate the notification system into your Next.js application:
+
+```tsx
 import { NotificationProvider } from '@/components/notification-provider';
 import { useNotifications } from '@/hooks/use-notifications';
 
@@ -54,15 +58,15 @@ function MyApp({ Component, pageProps }) {
 // Use the hook in your components
 function MyComponent() {
   const { sendNotification, subscribe, unsubscribe } = useNotifications();
-  
+
   const handleSendNotification = () => {
     sendNotification({
       title: 'Hello World',
       body: 'This is a test notification',
-      url: '/dashboard'
+      url: '/dashboard',
     });
   };
-  
+
   return (
     <div>
       <button onClick={() => subscribe()}>Subscribe to Notifications</button>
@@ -71,35 +75,57 @@ function MyComponent() {
     </div>
   );
 }
-\`\`\`
+```
 
 ### API Reference
 
+The following functions and types are available for interacting with the notification system:
+
 #### Notification Service
 
-\`\`\`tsx
-// Subscribe to notifications
+```typescript
+/**
+ * Subscribe to notifications.
+ * @param forceFallback - Optional flag to force fallback mode.
+ * @returns A promise resolving to a NotificationSubscription object or null.
+ */
 subscribeToNotifications(forceFallback?: boolean): Promise<NotificationSubscription | null>
 
-// Unsubscribe from notifications
+/**
+ * Unsubscribe from notifications.
+ * @returns A promise resolving to a boolean indicating success.
+ */
 unsubscribeFromNotifications(): Promise<boolean>
 
-// Send a notification
+/**
+ * Send a notification.
+ * @param payload - The notification payload.
+ * @returns A promise resolving to a boolean indicating success.
+ */
 sendNotification(payload: NotificationPayload): Promise<boolean>
 
-// Get notification history
+/**
+ * Get notification history.
+ * @returns An array of NotificationPayload objects.
+ */
 getNotificationHistory(): NotificationPayload[]
 
-// Check if notifications are supported
+/**
+ * Check if notifications are supported by the browser.
+ * @returns A boolean indicating support.
+ */
 isNotificationSupported(): boolean
 
-// Get current notification permission
+/**
+ * Get the current notification permission state.
+ * @returns The current notification permission state.
+ */
 getNotificationPermission(): NotificationPermissionState
-\`\`\`
+```
 
 #### Types
 
-\`\`\`tsx
+```typescript
 interface NotificationPayload {
   id?: string;
   title: string;
@@ -116,7 +142,7 @@ interface NotificationSubscription {
 }
 
 type NotificationPermissionState = "granted" | "denied" | "default" | "unsupported";
-\`\`\`
+```
 
 ## Configuration
 
@@ -143,4 +169,3 @@ Contributions are welcome! Please see our [Contributing Guide](CONTRIBUTING.md) 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
