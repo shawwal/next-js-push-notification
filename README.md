@@ -2,7 +2,7 @@
 
 A flexible notification system for Next.js applications with fallback support for environments where browser permissions are restricted.
 
-![Notification Demo](https://github.com/shawwal/nextjs-notification-system/raw/main/public/demo.png)
+![Notification Demo](https://github.com/shawwal/next-js-push-notification/raw/main/public/demo.png)
 
 ## Features
 
@@ -22,10 +22,10 @@ Check out the [link live deo](https://next-push-notification.shawwals.com/) or [
 
 \`\`\`bash
 # Clone the repository
-git clone https://github.com/shawwal/nextjs-notification-system.git
+git clone https://github.com/shawwal/next-js-push-notification.git
 
 # Navigate to the project directory
-cd nextjs-notification-system
+cd next-js-push-notification
 
 # Install dependencies
 npm install
