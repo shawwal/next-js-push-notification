@@ -17,6 +17,7 @@ import {
   type NotificationSubscription,
   type NotificationPermissionState,
 } from "./utils/notification-service"
+import InstallPWAButton from "@/components/install-pwa-button"
 
 function PushNotificationManager() {
   const [isSupported, setIsSupported] = useState(false)
@@ -91,6 +92,7 @@ function PushNotificationManager() {
           <div className="flex items-center justify-center p-4 bg-muted/50 rounded-md">
             <p className="text-muted-foreground">Notifications are not supported in this browser.</p>
           </div>
+          <InstallPWAButton />
         </CardContent>
       </Card>
     )

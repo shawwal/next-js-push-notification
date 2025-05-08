@@ -37,7 +37,7 @@ Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 \`\`\`bash
 # Clone your fork
-git clone https://github.com/yourusername/nextjs-notification-system.git
+git clone https://github.com/shawwal/nextjs-notification-system.git
 
 # Navigate to the project directory
 cd nextjs-notification-system
